@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            url "https://packages.aliyun.com/maven/repository/2425048-release-1KAssa/"
+            credentials {
+                username '625912c350e7395d82bb3285'
+                password 'j0f9YCOpKFRU'
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://packages.aliyun.com/maven/repository/2425048-release-1KAssa/"
+            credentials {
+                username '625912c350e7395d82bb3285'
+                password 'j0f9YCOpKFRU'
+            }
+        }
+    }
+}
+
+rootProject.name = "AndroidUtil"
+include ':app'
+include ':utilcodex'
