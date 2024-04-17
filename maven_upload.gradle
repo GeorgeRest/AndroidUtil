@@ -1,0 +1,43 @@
+apply plugin: 'maven-publish'
+
+def RELEASE_REPOSITORY_URL = "https://packages.aliyun.com/maven/repository/2425048-release-1KAssa/"
+def NEXUS_USERNAME = "625912c350e7395d82bb3285"
+def NEXUS_PASSWORD = "j0f9YCOpKFRU"
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                //allowInsecureProtocol(true)
+                name("ReleaseMaven")
+                url = RELEASE_REPOSITORY_URL
+                credentials {
+                    username = NEXUS_USERNAME
+                    password = NEXUS_PASSWORD
+                }
+            }
+        }
+        publications {
+            Production(MavenPublication) {
+                from components.release
+//                artifact androidSourcesJar //打包源码，去除这行打的包将看不到源码
+                groupId = GROUP
+                artifactId = POM_ARTIFACT_ID
+                version = VERSION_NAME
+            }
+            Develop(MavenPublication) {
+                from components.debug
+//                artifact androidSourcesJar //打包源码，去除这行打的包将看不到源码
+                groupId = GROUP
+                artifactId = POM_ARTIFACT_ID
+                version = "${VERSION_NAME}-SNAPSHOT"
+            }
+        }
+    }
+}
+
+// 用于打包源代码的任务
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}

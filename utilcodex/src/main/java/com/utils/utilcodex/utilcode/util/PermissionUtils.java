@@ -26,7 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
-import com.bwuni.androidutilcode_lib.utilcode.constant.PermissionConstants;
+import com.utils.utilcodex.utilcode.constant.PermissionConstants;
 
 
 /**

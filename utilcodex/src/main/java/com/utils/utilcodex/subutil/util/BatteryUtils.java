@@ -17,7 +17,8 @@ import java.util.Set;
 import androidx.annotation.IntDef;
 import androidx.annotation.RequiresApi;
 
-import com.bwuni.androidutilcode_lib.utilcode.util.ThreadUtils;
+import com.utils.utilcodex.utilcode.util.ThreadUtils;
+
 
 /**
  * <pre>

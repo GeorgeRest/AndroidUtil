@@ -3,7 +3,7 @@ package com.utils.utilcodex.utilcode.util;
 import androidx.collection.SimpleArrayMap;
 
 
-import com.bwuni.androidutilcode_lib.utilcode.constant.RegexConstants;
+import com.utils.utilcodex.utilcode.constant.RegexConstants;
 
 import java.util.ArrayList;
 import java.util.Collections;
