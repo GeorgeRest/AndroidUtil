@@ -1,9 +1,10 @@
 apply plugin: 'com.android.library'
-ext.GROUP="com.utils.androidutil"
-ext.POM_ARTIFACT_ID="utilcodex"
-ext.VERSION_NAME="1.1.0"
-//引用gradle_upload.gradle
-apply from: "${project.rootDir}/maven_upload.gradle"
+//ext.GROUP="com.utils.androidutil"
+//ext.POM_ARTIFACT_ID="utilcodex"
+//ext.VERSION_NAME="1.1.0"
+////引用gradle_upload.gradle
+//apply from: "${project.rootDir}/maven_upload.gradle"
+group='com.utils.androidutil'
 android {
     namespace 'com.utils.utilcodex'
     compileSdkVersion 33
@@ -28,6 +29,28 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            from components.android
+//
+//            groupId = 'com.utils.androidutil'
+//            artifactId = 'utilcodex'
+//            version = '1.5.4'
+//        }
+//    }
+//
+//    repositories {
+//        maven {
+//            url = "https://maven.pkg.github.com/USERNAME/REPOSITORY"  // 例如使用 GitHub Packages
+//            credentials {
+//                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USER")
+//                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
+//}
 
 dependencies {
 
